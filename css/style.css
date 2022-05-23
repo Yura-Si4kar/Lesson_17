@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1300px;
+    padding: 20px 0 0;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.gallery_list {
+    float: left;
+    width: 52%;
+}
+
+.photo_block {
+    float: right;
+    width: 48%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list_elements {
+    margin-bottom: 10px;
+}
+
+.list_elements a{
+    margin-bottom: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.list_elements a:hover {
+    text-decoration: underline;    
+    color: red;
+}
