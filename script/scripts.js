@@ -17,7 +17,7 @@ document.addEventListener('click', onGalleryListClick);
 
 init();
 
-function init(e) {
+function init() {
     fetchList();
     showGalleryList;
 
