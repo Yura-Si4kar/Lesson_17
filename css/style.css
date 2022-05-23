@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.body {
+    background-color: lightgreen;
+}
+
 .container {
     max-width: 1300px;
     padding: 20px 0 0;

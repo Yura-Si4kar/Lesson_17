@@ -17,9 +17,17 @@ document.addEventListener('click', onGalleryListClick);
 
 init();
 
-function init() {
+function init(e) {
     fetchList();
     showGalleryList;
+
+    fetch(ALBUM_API + 1)
+    .then((res) => res.json())
+    .then((data) => {
+        photoList = data;
+        addPhoto();
+        renderPhotoList();        
+    })
 }
 
 function fetchList() {
