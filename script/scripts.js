@@ -19,7 +19,6 @@ init();
 
 function init() {
     fetchList();
-    showGalleryList;
 
     fetch(ALBUM_API + 1)
     .then((res) => res.json())
@@ -37,11 +36,6 @@ function fetchList() {
             galleryList = data;
             renderList();        
     })
-}
-
-function showGalleryList() {
-    let listEl;
-    addListEL(listEl);
 }
 
 function addListEL(list) {
@@ -87,13 +81,6 @@ function addPhoto() {
     });
 
     return photo;
-}
-
-function addPhotoEL(photo) {
-    const newPhotoHtml = generateAlbumHtml(photo);
-    albumEl.insertAdjacentHTML('beforeend', newPhotoHtml);
-
-    renderPhotoList();
 }
 
 function generateAlbumHtml(photo) {
