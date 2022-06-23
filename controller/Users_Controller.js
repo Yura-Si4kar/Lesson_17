@@ -18,8 +18,8 @@ class Users_Controller {
     }
 
     onDelete(id) {
-        this._usersList.removeUsers(id)
-            .then(() => this.UsersView.renderList(this._usersList.list));
+        this._usersList.removeUsers(id);
+        this.UsersView.renderList(this._usersList.list);
     }
 
     addUsers(user) {
