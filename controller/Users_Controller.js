@@ -6,11 +6,11 @@ class Users_Controller {
         });
 
         this.FormView = new UsersFormView({
-            onSave: (user) => this.addUsers(user),
+            onAdd: (user) => this.addUsers(user),
         });
 
         $container.append(this.UsersView.$el);
-        $container.append(this.FormView.$form);
+        $container.append(this.FormView.$el);
 
         this._usersList = new Users_Collection();
         this._usersList.getUsersList()

@@ -11,7 +11,7 @@ class UsersFormView {
     static INPUT_EMAIL = '#email';
 
     constructor() {
-        this.$form = $(UsersFormView.FORM_TEMPLATE).on(
+        this.$el = $(UsersFormView.FORM_TEMPLATE).on(
             'submit',
             (e) => this.onFormSubmit(e),
         );
@@ -20,16 +20,16 @@ class UsersFormView {
     onFormSubmit(e) {
         e.preventDefault();
 
-        const usersName = this.$form.find(UsersFormView.INPUT_NAME).val();
-        const usersSurname = this.$form.find(UsersFormView.INPUT_SURNAME).val();
-        const usersEmail = this.$form.find(UsersFormView.INPUT_EMAIL).val();
+        const usersName = this.$el.find(UsersFormView.INPUT_NAME).val();
+        const usersSurname = this.$el.find(UsersFormView.INPUT_SURNAME).val();
+        const usersEmail = this.$el.find(UsersFormView.INPUT_EMAIL).val();
 
-        this.config.onSave && this.config.onSave({
+        this.config.onAdd && this.config.onAdd({
             name: usersName,
             surname: usersSurname,
             usersEmail: usersEmail,
         });
 
-        this.$form.trigger('reset');
+        this.$el.trigger('reset');
     }
 }
