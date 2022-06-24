@@ -1,4 +1,4 @@
-class UsersFormView {
+export default class UsersFormView {
     static FORM_TEMPLATE = `<form class="input_block" class="form">
         <input class="input_elements" type="text" id="name" placeholder="Enter your name!">
         <input class="input_elements" type="text" id="surname" placeholder="Enter your surname!">
@@ -10,7 +10,9 @@ class UsersFormView {
     static INPUT_SURNAME = '#surname';
     static INPUT_EMAIL = '#email';
 
-    constructor() {
+    constructor(config) {
+        this._config = config;
+
         this.$el = $(UsersFormView.FORM_TEMPLATE).on(
             'submit',
             (e) => this.onFormSubmit(e),
@@ -24,10 +26,10 @@ class UsersFormView {
         const usersSurname = this.$el.find(UsersFormView.INPUT_SURNAME).val();
         const usersEmail = this.$el.find(UsersFormView.INPUT_EMAIL).val();
 
-        this.config.onAdd && this.config.onAdd({
+        this._config.onAdd && this._config.onAdd({
             name: usersName,
             surname: usersSurname,
-            usersEmail: usersEmail,
+            email: usersEmail,
         });
 
         this.$el.trigger('reset');

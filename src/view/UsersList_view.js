@@ -1,13 +1,5 @@
-class UsersListView{
-    static USERS_LIST_TEMPLATE = `<table class="list_block">
-        <thead class="table_head">
-            <td>Name</td>
-            <td>Surname</td>
-            <td>E-mail</td>
-            <td>Eidt/Delete Button</td>
-        </thead>
-        <tbody class="input_blocks"></tbody>
-    </table>`;
+export default class UsersListView{
+    static USERS_LIST_TEMPLATE = `<table class="input_blocks"></table>`;
 
     static USERS_INSERT_TEMPLATE = `<tr class="list_elements" data-id='{{id}}'>
         <td>{{Name}}</td>
